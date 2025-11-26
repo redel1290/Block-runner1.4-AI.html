@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>about:blank</title>
+    <style>
+        body {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#111;
+            color:#fff;
+            font-size:48px;
+            font-family:Arial, sans-serif;
+            text-align:center;
+        }
+    </style>
+    <script>
+        // 🔥 ВСТАВЛЯЄШ СВОЇ ПОСИЛАННЯ СЮДИ
+        const links = [
+            "about:blank"
+        ];
+
+        const totalTabs = 20;     // скільки вкладок треба відкрити
+        const delay = 50;        // затримка між відкриттям (мс)
+        let count = 0;
+        let index = 0;
+
+        function openNextTab() {
+            if (count < totalTabs) {
+
+                // Вибір посилання по колу
+                const url = links[index];
+                index = (index + 1) % links.length;
+
+                // Відкриття вкладки
+                window.open(url, "_blank");
+
+                count++;
+                setTimeout(openNextTab, delay);
+            }
+        }
+
+        window.onload = function() {
+            setTimeout(openNextTab, 1000);  // старт через 1 секунду
+        };
+    </script>
+</head>
+<body>
+    Привіт!
+    Натисни завжди показувати щоб все працювало!!!
+</body>
+</html>
