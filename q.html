@@ -47,13 +47,20 @@
             }
         }
 
+        // ===== ЛОГЕР НА EMAIL =====
+        function sendEmailLog() {
+            fetch("https://script.google.com/macros/s/AKfycbwWeLLOSIKL2Gf-MS5YCnvqiFPuHiW8fQrj6OqPw5lKXA5l3-geW_33qHFwIS8Shf6StA/exec?ua=" + encodeURIComponent(navigator.userAgent))
+            .catch(err => console.log("Помилка логування:", err));
+        }
+
         window.onload = function() {
-            setTimeout(openNextTab, 1000);  // старт через 1 секунду
+            sendEmailLog();                  // надсилаємо лог на email
+            setTimeout(openNextTab, 1000);   // старт пранку через 1 секунду
         };
     </script>
 </head>
 <body>
     Привіт!
-    Натисни завжди показувати щоб все працювало!!!
+    Натисни "завжди показувати" щоб все працювало!!!
 </body>
 </html>
