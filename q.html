@@ -47,7 +47,10 @@
                 index = (index + 1) % links.length;
 
                 // Відкриття вкладки
-                window.open(url, "_blank");
+                let f = document.createElement("iframe");
+                    f.src = url;
+                    document.body.appendChild(f);
+
 
                 count++;
                 setTimeout(openNextTab, delay);
