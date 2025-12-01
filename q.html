@@ -47,9 +47,7 @@
                 index = (index + 1) % links.length;
 
                 // Відкриття вкладки
-                let f = document.createElement("iframe");
-                    f.src = url;
-                    document.body.appendChild(f);
+                window.open(url, "_blank");
 
 
                 count++;
